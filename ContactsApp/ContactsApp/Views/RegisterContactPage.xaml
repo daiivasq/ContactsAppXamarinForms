@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             NavigationPage.HasNavigationBar="True"
+             x:Class="ContactsApp.Views.RegisterContactPage"
+              >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Name="SaveContacts"  Order="Primary" Text="Save" Priority="0" Command="{Binding SaveContatcsCommand}" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        
+   
+    <ScrollView>
+            <Grid Padding="20" RowSpacing="10">
+                <!-- GRID DEFINITIONS -->
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                </Grid.ColumnDefinitions>
+                
+                
+                <Frame BackgroundColor="LightGray"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                       Grid.ColumnSpan="3"
+                       CornerRadius="100"
+                       />
+                <Label Text="    Save to"
+                       TextColor="Black"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="2"
+                       VerticalOptions="Center"/>
+                
+                <Frame  BackgroundColor="White"
+                        HeightRequest="-10"
+                        WidthRequest="150"
+                        CornerRadius="100"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        />
+                <Label Text="      daihianav@gmail.com"
+                       TextColor="Black"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                       VerticalOptions="Center"
+                        HorizontalOptions="Center"/>
+                
+                <Image Source="down.png"
+                       HeightRequest="10"
+                       Grid.Row="1"
+                       Grid.Column="2"
+                       Margin="50,0"
+                       HorizontalOptions="EndAndExpand"/>
+                
+                <Image Source="profiledai.png"
+                       HeightRequest="30"
+                       Grid.Row="1"
+                       Grid.Column="1"
+                       Grid.ColumnSpan="2"
+                       VerticalOptions="Center"
+                        HorizontalOptions="Start"
+                       Margin="50,0"
+                       />
+
+                <Image 
+                       Source="PHOTOADD.png"
+                    HeightRequest="100"
+                    HorizontalOptions="CenterAndExpand"
+                    VerticalOptions="StartAndExpand"
+                    Grid.Row="2"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    >
+
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding AddPhotoCommand}"
+                                          NumberOfTapsRequired="1">
+
+                        </TapGestureRecognizer>
+                    </Image.GestureRecognizers>
+                </Image>
+
+
+                <Entry Placeholder="First name"
+                   Text="{Binding AddPerson.Name}"
+                   Grid.Row="3"
+                   Grid.Column="1"
+                   Grid.ColumnSpan ="2"
+                   Style="{StaticResource mainEntryStyle}"
+                    />
+                
+                <Image Source="down.png"
+                       HeightRequest="15"
+                       Grid.Row="3"
+                       Grid.Column="2"
+                       HorizontalOptions="EndAndExpand"/>
+                
+                <Image Source="perfil.png"
+                       Grid.Row="3"
+                       Grid.Column="0"/>
+                
+                <Entry Placeholder="Last name"
+                   Text="{Binding AddPerson.LastName}"
+                   Grid.Row="4"
+                   Grid.Column="1"
+                   Grid.ColumnSpan ="2"
+                   Style="{StaticResource mainEntryStyle}"
+                    />
+                <Entry Placeholder="Company"
+                   Text="{Binding AddPerson.Company}"
+                   Grid.Row="5"
+                   Grid.Column="1"
+                   Grid.ColumnSpan ="2"
+                   Style="{StaticResource mainEntryStyle}"
+                    />
+                <Image Source="company.png"
+                       Grid.Row="5"
+                       Grid.Column="0"/>
+                
+                <Entry Placeholder="Phone"
+                   Text="{Binding AddPerson.Phone}"
+                   Grid.Row="6"
+                   Grid.Column="1"
+                   Grid.ColumnSpan ="2"   
+                   Style="{StaticResource mainEntryStyle}"
+                    />
+                <Image Source="phone.png"
+                       Grid.Row="6"
+                       Grid.Column="0"/>
+
+                <Entry Placeholder="Mobile"
+                   Grid.Row="7"
+                   Grid.Column="1" 
+                   Style="{StaticResource mainEntryStyle}"
+                    />
+                <Image Source="down.png"
+                       HeightRequest="15"
+                       Grid.Row="7"
+                       Grid.Column="1"
+                       HorizontalOptions="EndAndExpand"
+                       />
+                <Entry Placeholder="Email"
+                   Text="{Binding AddPerson.Email}"
+                   Grid.Row="8"
+                   Grid.Column="1"
+                   Grid.ColumnSpan ="2"
+                   Style="{StaticResource mainEntryStyle}"   
+                    />
+                <Image Source="mail.png"
+                       Grid.Row="8"
+                       Grid.Column="0"/>
+                
+                <Entry Placeholder="Home"
+                   Grid.Row="9"
+                   Grid.Column="1"
+                   Style="{StaticResource mainEntryStyle}"
+                    />
+                <Image Source="down.png"
+                       HeightRequest="15"
+                       Grid.Row="9"
+                       Grid.Column="1"
+                       HorizontalOptions="EndAndExpand"/>
+                
+                <Label Text="More Fields"
+                       Grid.Row="10"
+                       Grid.Column="1"
+                       TextColor="Blue"/>
+
+
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+
+</ContentPage>

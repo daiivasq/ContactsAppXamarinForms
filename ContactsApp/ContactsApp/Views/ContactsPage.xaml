@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ContactsApp.Views.ContactsPage"
+             NavigationPage.HasNavigationBar="False" 
+             x:Name="MyContacts">
+
+
+    <ContentPage.Content>
+
+        <Grid Padding="20">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            
+            
+                <Frame BackgroundColor="White" Grid.Row="0" CornerRadius="125" HeightRequest="50" WidthRequest="50"/>
+                <Image Source="profiledai.png" Grid.Row="0" HeightRequest="50" WidthRequest="5" Margin="-10,20,-270,5" />
+                <Image Source="more.png" Grid.Row="0" HeightRequest="-20" WidthRequest="5"  Margin="-60,20,-270,5"/>
+            
+                <SearchBar Placeholder="SEARCH"
+                       Margin="-5,15,80,15"
+                      TextChanged="SearchBar_TextChanged"/>
+        
+            <ListView x:Name="ListContacts" ItemsSource="{Binding Contacts}" SelectedItem="{Binding ContactsSelected, Mode=TwoWay}" Grid.Row="1" VerticalOptions="Start">
+            <ListView.ItemTemplate >
+                <DataTemplate>
+                    <ViewCell >
+                        <ViewCell.ContextActions  >
+                            
+                             <MenuItem Text="DELETE"
+                                       IconImageSource="delete.png"
+                                       
+                                      Command="{Binding Path=BindingContext.DeleteSelectedCommand , Source={x:Reference MyContacts}}"
+                                      CommandParameter="{Binding .}"
+                                      IsDestructive="True"
+                                       />
+                                <MenuItem Text="EDIT"
+                                          IconImageSource="usuariodit.png"
+                                      Command="{Binding Path=BindingContext.EditSelectedCommand , Source={x:Reference MyContacts}}"
+                                      CommandParameter="{Binding .}"
+                                      IsDestructive="True"
+                                       />
+
+                            </ViewCell.ContextActions>
+                        <StackLayout  BackgroundColor="Transparent" Orientation="Horizontal" >
+                            <Image Source="{Binding ProfilePhoto}" />
+                            <Label Text="{Binding Name}"/>
+                            <Label Text="{Binding LastName}"/>
+                            <Label Text="{Binding Phone}"/>
+
+                            </StackLayout>
+
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+           
+          
+                <ImageButton Source="ADD.png" Grid.Row="1" 
+                        BorderWidth="0"  
+                        BackgroundColor="Transparent"
+                        HorizontalOptions="End"
+                        WidthRequest="100"
+                        HeightRequest="76"
+                        Margin="0,0,-5,22"
+                        VerticalOptions="End"
+                        Command="{Binding AddContactCommand}"
+                             />
+
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

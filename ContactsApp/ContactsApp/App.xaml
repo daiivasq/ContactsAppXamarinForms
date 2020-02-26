@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ContactsApp.App">
+    <Application.Resources>
+
+        <ResourceDictionary>
+            <Style x:Key="mainEntryStyle" TargetType="Entry">
+
+                    <Setter Property="PlaceholderColor" Value="Gray"/>
+                    <Setter Property="VerticalOptions" Value="StartAndExpand"/>
+
+                </Style>
+
+            <Style TargetType="NavigationPage">
+                <Setter  Property="BarBackgroundColor" Value="LightGray" />
+            </Style>
+                
+            <Style x:Key="mainButtonStyle" TargetType="Button">
+                <Setter Property="CornerRadius" Value="100"/>
+                <Setter Property="BackgroundColor" Value="Default"/>
+                <Setter Property="Padding" Value="20"/>
+
+            </Style>
+
+            </ResourceDictionary>
+       
+    </Application.Resources>
+</Application>
