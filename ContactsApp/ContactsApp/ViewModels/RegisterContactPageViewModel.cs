@@ -16,17 +16,17 @@ namespace ContactsApp.ViewModels
         public ICommand AddPhotoCommand { get; set; }
 
         public ICommand SaveContatcsCommand { get; set; }
-        Person _AddPerson;
+        Person _addPerson;
         public Person AddPerson
         {
             get
             {
-                return _AddPerson;
+                return _addPerson;
             }
             set
             {
-                _AddPerson = value;
-                if (_AddPerson != null)
+                _addPerson = value;
+                if (_addPerson != null)
                     return;
             }
         }
@@ -45,7 +45,7 @@ namespace ContactsApp.ViewModels
         {
             AddPerson = _contactsSelectec;
             SaveContatcsCommand = new Command(async  () => {
-                contacts.Add(AddPerson);
+                contacts.Add(_contactsSelectec);
                 await App.Current.MainPage.Navigation.PopAsync();
 
             });

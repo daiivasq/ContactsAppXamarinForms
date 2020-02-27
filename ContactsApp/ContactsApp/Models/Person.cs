@@ -13,7 +13,6 @@ namespace ContactsApp.Models
         public string Company { get; set; }
         public string Email { get; set; }
         public string ProfilePhoto { get; set; }
-        public Color Color { get; set; }
 
     }
 }

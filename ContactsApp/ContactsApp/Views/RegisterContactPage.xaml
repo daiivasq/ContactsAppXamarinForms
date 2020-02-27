@@ -6,19 +6,21 @@
              mc:Ignorable="d"
              NavigationPage.HasNavigationBar="True"
              x:Class="ContactsApp.Views.RegisterContactPage"
+             Title="Create Contact" 
               >
 
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Name="SaveContacts"  Order="Primary" Text="Save" Priority="0" Command="{Binding SaveContatcsCommand}" />
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Name="SaveContacts"  Order="Primary" Text="Save" IconImageSource="save.png" Priority="0" Command="{Binding SaveContatcsCommand}" />
+        <ToolbarItem Name="MoreOptions"  Order="Secondary"  IconImageSource="more.png"  Priority="1"  />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         
    
     <ScrollView>
-            <Grid Padding="20" RowSpacing="10">
+            <Grid Padding="20" RowSpacing="7">
                 <!-- GRID DEFINITIONS -->
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="20" />
+                    <RowDefinition Height="1" />
                     <RowDefinition Height="60" />
                     <RowDefinition Height="70" />
                     <RowDefinition Height="50" />
@@ -30,7 +32,6 @@
                     <RowDefinition Height="50" />
                     <RowDefinition Height="50" />
                 </Grid.RowDefinitions>
-
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20"/>
                     <ColumnDefinition Width="*"/>
@@ -38,12 +39,11 @@
                     <ColumnDefinition Width="10"/>
                 </Grid.ColumnDefinitions>
                 
-                
                 <Frame BackgroundColor="LightGray"
                         Grid.Row="1"
                         Grid.Column="0"
-                       Grid.ColumnSpan="3"
-                       CornerRadius="100"
+                       Grid.ColumnSpan="4"
+                       CornerRadius="20"
                        />
                 <Label Text="    Save to"
                        TextColor="Black"
@@ -152,7 +152,8 @@
                 <Image Source="phone.png"
                        Grid.Row="6"
                        Grid.Column="0"/>
-
+                
+                
                 <Entry Placeholder="Mobile"
                    Grid.Row="7"
                    Grid.Column="1" 

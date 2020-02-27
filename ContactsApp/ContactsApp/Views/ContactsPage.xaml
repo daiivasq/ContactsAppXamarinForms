@@ -17,14 +17,14 @@
                 <RowDefinition Height="70" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
-            
-            
-                <Frame BackgroundColor="White" Grid.Row="0" CornerRadius="125" HeightRequest="50" WidthRequest="50"/>
-                <Image Source="profiledai.png" Grid.Row="0" HeightRequest="50" WidthRequest="5" Margin="-10,20,-270,5" />
-                <Image Source="more.png" Grid.Row="0" HeightRequest="-20" WidthRequest="5"  Margin="-60,20,-270,5"/>
-            
-                <SearchBar Placeholder="SEARCH"
-                       Margin="-5,15,80,15"
+
+            <Frame BackgroundColor="White" Grid.Row="0" CornerRadius="20" HeightRequest="50" WidthRequest="50"/>
+                <Image Source="profiledai.png" Grid.Row="0" HeightRequest="50" WidthRequest="5" Margin="-10,10,-270,5"  />
+            <Image Source="ic_more_vert.png" Grid.Row="0" HeightRequest="80"  Margin="-80,25,-270,15" />
+               <Image Source="ic_menu.png" Grid.Row="0" HeightRequest="50" HorizontalOptions="Start" Margin="5,20" />
+
+            <SearchBar Placeholder="SEARCH"
+                       Margin="20,15,80,15"
                       TextChanged="SearchBar_TextChanged"/>
         
             <ListView x:Name="ListContacts" ItemsSource="{Binding Contacts}" SelectedItem="{Binding ContactsSelected, Mode=TwoWay}" Grid.Row="1" VerticalOptions="Start">

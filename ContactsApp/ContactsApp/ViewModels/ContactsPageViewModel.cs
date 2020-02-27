@@ -19,19 +19,18 @@ namespace ContactsApp.ViewModels
         public ICommand EditSelectedCommand { get; set; }
         public ICommand AddContactCommand { get; set; }
 
-        Person _ContactsSelectec;
+        Person _contactsSelectec;
         public Person ContactsSelected
         {
             get
             {
-                return _ContactsSelectec;
+                return _contactsSelectec;
             }
             set
             {
-                _ContactsSelectec = value;
-                if (_ContactsSelectec != null)
+                _contactsSelectec = value;
+                if (_contactsSelectec != null)
                     DisplayElementSelect();
-               
             }
         }
         public ObservableCollection<Person> Contacts { get; set; } = new ObservableCollection<Person>();
@@ -39,37 +38,37 @@ namespace ContactsApp.ViewModels
 
         public ContactsPageViewModel(ObservableCollection<Person> contacts)
         {
-            Contacts.Add(new Person() { Name = "RAFAEL", LastName = "CHICA MALA " , Phone = "809-664-1604", ProfilePhoto = "profiledai.png" }) ;
-            Contacts.Add(new Person() { Name = "Dayanna", LastName = "Vasquez ", Phone = "809-664-0000", ProfilePhoto = "profiledai.png" });
- 
-            DeleteSelectedCommand = new Command<Person>(async(_ContactsSelectec) => {
-                if (Contacts.Remove(_ContactsSelectec))
-                {
-                    await App.Current.MainPage.DisplayAlert("WARNING", "DELETE :" + _ContactsSelectec.Name  , "OK");
-                }
+            DeleteSelectedCommand = new Command<Person>(async(_contactsSelectec) => {
+                if (Contacts.Remove(_contactsSelectec))
+                await App.Current.MainPage.DisplayAlert("WARNING", $" Deleted Contact : \n Name: {_contactsSelectec.Name} \n Number : {_contactsSelectec.Phone} " , "OK");
+              
                 
         });
-            EditSelectedCommand = new Command<Person>(async (_ContactsSelectec) => {
-                await App.Current.MainPage.Navigation.PushAsync(new RegisterContactPage(Contacts, _ContactsSelectec));
+            EditSelectedCommand = new Command<Person>(async (_contactsSelectec) => {
+
+                Contacts.Remove(_contactsSelectec);
+                await App.Current.MainPage.Navigation.PushAsync(new RegisterContactPage(Contacts, _contactsSelectec));
+                   
+           
             });
             AddContactCommand = new Command(async (_ContactsSelectec) => {
 
                 await App.Current.MainPage.Navigation.PushAsync( new RegisterContactPage(Contacts));
             });
-
         }
         public async void DisplayElementSelect()
         {
-            string Action;
-            Action = await App.Current.MainPage.DisplayActionSheet("Choose ", "View information" ,"Call Contact");
-            
-            if (Action == "View information")
+            string Action, Choose, ViewInformation, CallContact;
+            Choose = "Chooae"; ViewInformation = "View Information"; CallContact = "Call Contact ";
+            Action = await App.Current.MainPage.DisplayActionSheet($"{Choose}", $"{ViewInformation}", $"{CallContact}");
+
+            if (Action == ViewInformation)
             {
-                await App.Current.MainPage.DisplayAlert("Contacto seleccionado:", " Name :" + ContactsSelected.Name + "\nLAST NAME :" + ContactsSelected.LastName +  "\nphone.png" + ContactsSelected.Phone + "\nmail.png" + ContactsSelected.Email , "OK");
+                await App.Current.MainPage.DisplayAlert("selected contact", $"Name: {ContactsSelected.Name} \n Last Name : {ContactsSelected.LastName} \n Number : {ContactsSelected.Phone} \n Mail : {ContactsSelected.Email}", "OK");
             }
-            else if (Action == "Call Contact")
+            else if (Action == CallContact)
             {
-                PlacePhoneCall(_ContactsSelectec.Phone);
+                PlacePhoneCall(_contactsSelectec.Phone);
             }
             else
             {

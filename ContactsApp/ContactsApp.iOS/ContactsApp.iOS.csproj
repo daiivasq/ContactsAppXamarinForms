@@ -132,4 +132,7 @@
       <Name>ContactsApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Untitled-6.png" />
+  </ItemGroup>
 </Project>
