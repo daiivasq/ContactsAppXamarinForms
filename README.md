@@ -1,5 +1,8 @@
 # ContactsAppXamarinForms
 
+![edit](https://user-images.githubusercontent.com/60607967/75505067-aa082c80-59b0-11ea-8e1f-dad246cab50e.gif)
+![call](https://user-images.githubusercontent.com/60607967/75505086-b42a2b00-59b0-11ea-94b5-04497ef29e77.gif)
+![search](https://user-images.githubusercontent.com/60607967/75505095-b8564880-59b0-11ea-8d25-56f7d915cd1f.gif)
 
 ![WhatsApp Image 2020-02-27 at 21 47 27](https://user-images.githubusercontent.com/60607967/75503282-a625db80-59ab-11ea-8741-84f792b4920c.jpeg)
 ![WhatsApp Image 2020-02-27 at 21 47 27 (1)](https://user-images.githubusercontent.com/60607967/75503263-9a3a1980-59ab-11ea-906e-4cfc91a57edd.jpeg)
