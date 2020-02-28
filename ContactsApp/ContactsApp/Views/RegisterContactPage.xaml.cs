@@ -15,20 +15,22 @@ namespace ContactsApp.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterContactPage : ContentPage
     {
-       
+     
         public RegisterContactPage(ObservableCollection<Person> people)
         {
             InitializeComponent();
-            
             BindingContext = new RegisterContactPageViewModel(people);
             
         }
+
         public RegisterContactPage(ObservableCollection<Person> people, Person _contactsSelectec)
         {
             InitializeComponent();
             BindingContext = new RegisterContactPageViewModel(people, _contactsSelectec);
         }
+  
 
-     
+
+   
     }
 }

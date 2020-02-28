@@ -13,6 +13,8 @@ namespace ContactsApp.Models
         public string Company { get; set; }
         public string Email { get; set; }
         public string ProfilePhoto { get; set; }
+        public string Gender { get; set; }
+        public string TypePhone { get; set; }
 
     }
 }

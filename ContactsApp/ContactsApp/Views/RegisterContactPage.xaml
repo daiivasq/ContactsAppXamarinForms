@@ -131,64 +131,82 @@
                    Grid.ColumnSpan ="2"
                    Style="{StaticResource mainEntryStyle}"
                     />
+
+                <Picker x:Name="PickerTypeGemder"
+                        ItemsSource="{Binding Genders}"
+                        SelectedItem="{Binding SelectedGender}"
+                        ItemDisplayBinding="{Binding Gender}"
+                        Title="Gender"
+                        Grid.Row="5" 
+                        Grid.Column="1"
+                        />
+                <Image Source="down.png"
+                       HeightRequest="15"
+                       Grid.Row="5"
+                       Grid.Column="1"
+                       HorizontalOptions="EndAndExpand"/>
+
                 <Entry Placeholder="Company"
                    Text="{Binding AddPerson.Company}"
-                   Grid.Row="5"
+                   Grid.Row="6"
                    Grid.Column="1"
                    Grid.ColumnSpan ="2"
                    Style="{StaticResource mainEntryStyle}"
                     />
                 <Image Source="company.png"
-                       Grid.Row="5"
+                       Grid.Row="6"
                        Grid.Column="0"/>
                 
                 <Entry Placeholder="Phone"
                    Text="{Binding AddPerson.Phone}"
-                   Grid.Row="6"
+                   Grid.Row="7"
                    Grid.Column="1"
                    Grid.ColumnSpan ="2"   
                    Style="{StaticResource mainEntryStyle}"
                     />
                 <Image Source="phone.png"
-                       Grid.Row="6"
+                       Grid.Row="7"
                        Grid.Column="0"/>
-                
-                
-                <Entry Placeholder="Mobile"
-                   Grid.Row="7"
-                   Grid.Column="1" 
-                   Style="{StaticResource mainEntryStyle}"
-                    />
+
+                <Picker x:Name="PickerTypePhone" 
+                         ItemsSource="{Binding PhoneType}"
+                        SelectedItem="{Binding SelectedPhone}"
+                        ItemDisplayBinding="{Binding Selected}"
+                        Title="Mobile"
+                        Grid.Row="8"
+                        Grid.Column="1"
+                        />
+              
                 <Image Source="down.png"
                        HeightRequest="15"
-                       Grid.Row="7"
+                       Grid.Row="8"
                        Grid.Column="1"
                        HorizontalOptions="EndAndExpand"
                        />
                 <Entry Placeholder="Email"
                    Text="{Binding AddPerson.Email}"
-                   Grid.Row="8"
+                   Grid.Row="9"
                    Grid.Column="1"
                    Grid.ColumnSpan ="2"
                    Style="{StaticResource mainEntryStyle}"   
                     />
                 <Image Source="mail.png"
-                       Grid.Row="8"
+                       Grid.Row="9"
                        Grid.Column="0"/>
                 
                 <Entry Placeholder="Home"
-                   Grid.Row="9"
+                   Grid.Row="10"
                    Grid.Column="1"
                    Style="{StaticResource mainEntryStyle}"
                     />
                 <Image Source="down.png"
                        HeightRequest="15"
-                       Grid.Row="9"
+                       Grid.Row="10"
                        Grid.Column="1"
                        HorizontalOptions="EndAndExpand"/>
                 
                 <Label Text="More Fields"
-                       Grid.Row="10"
+                       Grid.Row="11"
                        Grid.Column="1"
                        TextColor="Blue"/>
 
